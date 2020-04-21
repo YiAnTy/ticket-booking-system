@@ -101,8 +101,8 @@ def _get_order(order_id):
     with ClusterRpcProxy(CONFIG) as rpc:
         order = rpc.orderService.get_order(order_id)
 
-    # Retrieve all products from the products service
-    ticket_map = {prod['id']: prod for prod in rpc.ticketService.list()}
+        # Retrieve all products from the products service
+        ticket_map = {prod['id']: prod for prod in rpc.ticketService.list()}
 
 
     # Enhance order details with product and image details.

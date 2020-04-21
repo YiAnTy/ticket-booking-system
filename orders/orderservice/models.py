@@ -32,7 +32,7 @@ class OrderDetail(Base):
         ForeignKey("orders.id", name="fk_order_details_orders"),
         nullable=False
     )
-    order = relationship(Order, backref="order_details")
+    order = relationship("Order", backref="order_details")
     ticket_id = Column(Integer, nullable=False)
     price = Column(DECIMAL(18, 2), nullable=False)
 
