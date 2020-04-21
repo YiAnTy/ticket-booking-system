@@ -1,41 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ee4ea1b-0640-44fc-bba0-63fa297a483a" name="Default Changelist" comment="Create MicroService API, Waiting for database design">
-      <change afterPath="$PROJECT_DIR$/gateway/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/gateway/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/gateway/entrypoints.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/gateway/exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/gateway/schemas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/gateway/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/orderservice/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/orderservice/exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/orderservice/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/orderservice/schemas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/orderservice/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/run.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payments/paymentservice/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tickets/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tickets/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tickets/run.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tickets/ticketservice/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tickets/ticketservice/dependencies.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tickets/ticketservice/exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tickets/ticketservice/schemas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tickets/ticketservice/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/userservice/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependences/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependences/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/ticketservice/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependences/redis_service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/order_service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/payment_service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/register.py" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/register.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/ticket_service.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/user_service.py" beforeDir="false" />
-    </list>
+    <list default="true" id="5ee4ea1b-0640-44fc-bba0-63fa297a483a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +148,7 @@
       <updated>1587206393008</updated>
       <workItem from="1587279662994" duration="16239000" />
       <workItem from="1587392447063" duration="9756000" />
-      <workItem from="1587457647596" duration="536000" />
+      <workItem from="1587457647596" duration="761000" />
     </task>
     <task id="LOCAL-00001" summary="Create MicroService API, Waiting for database design">
       <created>1587367125236</created>
@@ -191,7 +157,21 @@
       <option name="project" value="LOCAL" />
       <updated>1587367125236</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="redesign the frame work">
+      <created>1587458331383</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587458331383</updated>
+    </task>
+    <task id="LOCAL-00003" summary="delete register example file">
+      <created>1587458374157</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587458374157</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +192,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create MicroService API, Waiting for database design" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create MicroService API, Waiting for database design" />
+    <MESSAGE value="redesign the frame work" />
+    <MESSAGE value="delete register example file" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete register example file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
