@@ -14,7 +14,7 @@ from nameko.rpc import rpc
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.dirname(__file__)+'/'+'..'))
-from dependences.redis_service import RedisService
+from tickets.dependences.redis_service import RedisService
 
 
 class RegisterService(object):
