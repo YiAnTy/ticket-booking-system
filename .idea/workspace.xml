@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ee4ea1b-0640-44fc-bba0-63fa297a483a" name="Default Changelist" comment="" />
+    <list default="true" id="5ee4ea1b-0640-44fc-bba0-63fa297a483a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +150,7 @@
       <updated>1587206393008</updated>
       <workItem from="1587279662994" duration="16239000" />
       <workItem from="1587392447063" duration="9756000" />
-      <workItem from="1587457647596" duration="761000" />
+      <workItem from="1587457647596" duration="1444000" />
     </task>
     <task id="LOCAL-00001" summary="Create MicroService API, Waiting for database design">
       <created>1587367125236</created>
@@ -212,11 +214,6 @@
           <url>file://$PROJECT_DIR$/gateway/gateway/service.py</url>
           <line>173</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/orders/orderservice/service.py</url>
-          <line>35</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
