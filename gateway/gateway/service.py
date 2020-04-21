@@ -6,7 +6,7 @@ from nameko.standalone.rpc import ClusterRpcProxy
 import argparse
 
 from gateway.gateway.exceptions import TicketNotFound
-from gateway.gateway.schemas import CreateOrderSchema, GetOrderSchema, TicketSchema
+from gateway.gateway.schemas import CreateAccountSchema, GetAccountSchema, CreateOrderSchema, GetOrderSchema, TicketSchema
 
 
 parser = argparse.ArgumentParser()
@@ -176,6 +176,32 @@ def _create_order(order_data):
             serialized_data['order_details']
         )
         return result['id']
+
+
+@app.route('/accounts', methods=['POST'])
+def add_account():
+    schema = CreateAccountSchema()
+    try:
+        # load input data through a schema (for validation)
+        # Note - this may raise `ValueError` for invalid json,
+        # or `ValidationError` if data is invalid.
+        account_data = schema.loads(request.get_data(as_text=True))
+    except ValueError as exc:
+        raise BadRequest("Invalid json: {}".format(exc))
+
+    with ClusterRpcProxy(CONFIG) as rpc:
+        result = rpc.userService.add_account(account_data)
+    return Response(json.dumps({'id': result['account_id']}), mimetype='application/json')
+
+
+@app.route('/accounts', methods=['GET'])
+def get_account():
+    with ClusterRpcProxy(CONFIG) as rpc:
+        account = rpc.userService.get_account(request.args.get('account_id'))
+    return Response(
+        GetAccountSchema().dumps(account),
+        mimetype='application/json'
+    )
 
 
 if __name__ == "__main__":
