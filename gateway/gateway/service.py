@@ -6,7 +6,7 @@ from nameko.standalone.rpc import ClusterRpcProxy
 import argparse
 
 from gateway.gateway.exceptions import TicketNotFound
-from gateway.gateway.schemas import CreateAccountSchema, GetAccountSchema, CreateOrderSchema, GetOrderSchema, TicketSchema
+from gateway.gateway.schemas import CreateAccountSchema, GetAccountSchema, CreateOrderSchema, GetOrderSchema, TicketSchema, GetPaymentSchema
 
 
 parser = argparse.ArgumentParser()
@@ -29,7 +29,7 @@ ClusterRpcProxy(CONFIG)
 
 
 @app.route('/tickets', methods=["GET"])
-def get_product():
+def get_ticket():
     """Gets ticket by `ticket_id`
     """
     ticket_id = request.args.get("ticket_id")
@@ -42,23 +42,20 @@ def get_product():
 
 
 @app.route('/tickets', methods=["POST"])
-def create_product():
-    """Create a new product - product data is posted as json
+def create_ticket():
+    """Create a new ticket - ticket data is posted as json
 
     Example request ::
 
         {
             "id": "the_odyssey",
-            "title": "The Odyssey",
-            "passenger_capacity": 101,
-            "maximum_speed": 5,
-            "in_stock": 10
+            "title": "The Odyssey"
         }
 
 
     The response contains the new product ID in a json document ::
 
-        {"id": "the_odyssey"}
+        {"id": "1234"}
 
     """
 
@@ -173,7 +170,8 @@ def _create_order(order_data):
         # correctly.
         serialized_data = CreateOrderSchema().dump(order_data)
         result = rpc.orderService.create_order(
-            serialized_data['order_details']
+            serialized_data['order_details'],
+            order_data['status']
         )
         return result['id']
 
@@ -200,6 +198,31 @@ def get_account():
         account = rpc.userService.get_account(request.args.get('account_id'))
     return Response(
         GetAccountSchema().dumps(account),
+        mimetype='application/json'
+    )
+
+
+@app.route('/payment', methods=['POST'])
+def pay():
+    result = request.get_json()
+
+    with ClusterRpcProxy(CONFIG) as rpc:
+        order = rpc.orderService.get_order(result['order_id'])
+        payment = rpc.paymentService.pay(order, result['status'])
+    return Response(
+        GetPaymentSchema().dumps(payment),
+        mimetype='application/json'
+    )
+
+
+@app.route('/refund', methods=['POST'])
+def refund():
+    result = request.get_json()
+
+    with ClusterRpcProxy(CONFIG) as rpc:
+        payment = rpc.paymentService.refund(result['order_id'])
+    return Response(
+        GetPaymentSchema().dumps(payment),
         mimetype='application/json'
     )
 

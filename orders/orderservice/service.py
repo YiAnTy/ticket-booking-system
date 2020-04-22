@@ -1,4 +1,4 @@
-from nameko.events import EventDispatcher
+from nameko.events import EventDispatcher, event_handler
 from nameko.rpc import rpc
 
 from orderservice.exceptions import NotFound
@@ -22,7 +22,7 @@ class OrdersService:
         return OrderSchema().dump(order)
 
     @rpc
-    def create_order(self, order_details):
+    def create_order(self, order_details, status):
         order = Order(
             order_details=[
                 OrderDetail(
@@ -30,7 +30,8 @@ class OrdersService:
                     price=order_detail['price']
                 )
                 for order_detail in order_details
-            ]
+            ],
+            status=status
         )
         self.db.add(order)
         self.db.commit()
@@ -49,12 +50,11 @@ class OrdersService:
             order_details['id']: order_details
             for order_details in order['order_details']
         }
-
+        status = order['status']
         order = self.db.query(Order).get(order['id'])
-
+        order.status = status
         for order_detail in order.order_details:
             order_detail.price = order_details[order_detail.id]['price']
-            order_detail.quantity = order_details[order_detail.id]['quantity']
 
         self.db.commit()
         return OrderSchema().dump(order)
@@ -64,3 +64,21 @@ class OrdersService:
         order = self.db.query(Order).get(order_id)
         self.db.delete(order)
         self.db.commit()
+
+    @event_handler('paymentService', 'payment')
+    def handle_payment(self, payment):
+        if payment['payment']['status'] == 1:
+            order = self.get_order(payment['payment']['order_id'])
+            order = OrderSchema().dump(order)
+            order['status'] = 1
+            print(order)
+            self.update_order(order)
+
+    @event_handler('paymentService', 'refund')
+    def handle_payment(self, payment):
+        if payment['payment']['status'] == 2:
+            order = self.get_order(payment['payment']['order_id'])
+            order = OrderSchema().dump(order)
+            order['status'] = 2
+            print(order)
+            self.update_order(order)

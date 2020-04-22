@@ -24,7 +24,7 @@ class TicketService(object):
         ticket = schemas.Ticket().load(ticket)
         self.storage.create(ticket)
 
-    @event_handler('orders', 'order_created')
+    @event_handler('orderService', 'order_created')
     def handle_order_created(self, payload):
         for product in payload['order']['order_details']:
             self.storage.decrement_stock(
