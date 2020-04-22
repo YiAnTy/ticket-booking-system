@@ -13,8 +13,9 @@ class CreateOrderSchema(Schema):
 
 
 class TicketSchema(Schema):
-    id = fields.Str(required=True)
+    ticket_id = fields.Str(required=True)
     title = fields.Str(required=True)
+    placed = fields.Str(required=True)
 
 
 class GetOrderSchema(Schema):

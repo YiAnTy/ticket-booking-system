@@ -2,5 +2,6 @@ from marshmallow import Schema, fields
 
 
 class Ticket(Schema):
-    id = fields.Str(required=True)
+    ticket_id = fields.Str(required=True)
     title = fields.Str(required=True)
+    placed = fields.Str(required=True)

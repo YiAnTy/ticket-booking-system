@@ -27,5 +27,4 @@ class TicketService(object):
     @event_handler('orders', 'order_created')
     def handle_order_created(self, payload):
         for product in payload['order']['order_details']:
-            self.storage.decrement_stock(
-                product['product_id'], product['quantity'])
+            result = self.storage.change_status(product['product_id'])
