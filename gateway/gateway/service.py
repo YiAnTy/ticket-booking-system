@@ -171,6 +171,7 @@ def _create_order(order_data):
         serialized_data = CreateOrderSchema().dump(order_data)
         result = rpc.orderService.create_order(
             serialized_data['order_details'],
+            order_data['account_id'],
             order_data['status']
         )
         return result['id']
@@ -222,7 +223,7 @@ def refund():
     with ClusterRpcProxy(CONFIG) as rpc:
         payment = rpc.paymentService.refund(result['order_id'])
     return Response(
-        GetPaymentSchema().dumps(payment),
+        json.dumps({'msg': "you get $" + payment['total_price'] + "refund"}),
         mimetype='application/json'
     )
 

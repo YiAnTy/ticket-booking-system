@@ -19,6 +19,7 @@ class CreateOrderSchema(Schema):
     order_details = fields.Nested(
         CreateOrderDetailSchema, many=True, required=True
     )
+    account_id = fields.Int(required=True)
     status = fields.Int(required=True)
 
 
@@ -36,6 +37,7 @@ class GetOrderSchema(Schema):
         ticket = fields.Nested(TicketSchema, many=False)
 
     id = fields.Int()
+    account_id = fields.Int()
     order_details = fields.Nested(OrderDetail, many=True)
 
 

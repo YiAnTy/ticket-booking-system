@@ -22,7 +22,7 @@ class OrdersService:
         return OrderSchema().dump(order)
 
     @rpc
-    def create_order(self, order_details, status):
+    def create_order(self, order_details, account_id, status):
         order = Order(
             order_details=[
                 OrderDetail(
@@ -31,6 +31,7 @@ class OrdersService:
                 )
                 for order_detail in order_details
             ],
+            account_id=account_id,
             status=status
         )
         self.db.add(order)
