@@ -73,7 +73,7 @@ def create_ticket():
     with ClusterRpcProxy(CONFIG) as rpc:
         rpc.ticketService.create(ticket_data)
     return Response(
-        json.dumps({'id': ticket_data['id']}), mimetype='application/json'
+        json.dumps({'id': ticket_data['ticket_id']}), mimetype='application/json'
     )
 
 
