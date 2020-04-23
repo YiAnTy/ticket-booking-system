@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ee4ea1b-0640-44fc-bba0-63fa297a483a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ticket-booking-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ticket-booking-system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/gateway/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/gateway/service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/ticketservice/dependencies.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/ticketservice/dependencies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/ticketservice/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/ticketservice/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +200,7 @@
       <workItem from="1587457647596" duration="18162000" />
       <workItem from="1587537396842" duration="16990000" />
       <workItem from="1587615935694" duration="87000" />
-      <workItem from="1587616028176" duration="546000" />
+      <workItem from="1587616028176" duration="1153000" />
     </task>
     <task id="LOCAL-00001" summary="Create MicroService API, Waiting for database design">
       <created>1587367125236</created>
