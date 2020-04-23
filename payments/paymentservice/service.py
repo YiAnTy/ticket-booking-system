@@ -25,7 +25,7 @@ class PaymentService:
 
         payment = schemas.PaymentSchema().dump(payment)
         print(payment)
-        self.event_dispatcher('payment', {'payment': payment})
+        self.event_dispatcher('pay_success', {'payment': payment})
         return payment
 
     @rpc

@@ -26,5 +26,15 @@ class TicketService(object):
 
     @event_handler('orderService', 'order_created')
     def handle_order_created(self, payload):
-        for product in payload['order']['order_details']:
-            result = self.storage.change_status(product['ticket_id'])
+        for ticket in payload['order']['order_details']:
+            result = self.storage.change_status(ticket['ticket_id'], "reserved")
+
+    @event_handler('orderService', 'order_success')
+    def handle_pay_success(self, order):
+        for ticket in order['order']['order_details']:
+            self.storage.change_status(ticket['ticket_id'], "complete")
+
+    @event_handler('orderService', 'order_cancel')
+    def handle_refund(self, order):
+        for ticket in order['order']['order_details']:
+            self.storage.change_status(ticket['ticket_id'], "returned")

@@ -66,20 +66,23 @@ class OrdersService:
         self.db.delete(order)
         self.db.commit()
 
-    @event_handler('paymentService', 'payment')
+    @event_handler('paymentService', 'pay_success')
     def handle_payment(self, payment):
+        print(payment['payment']['status'])
         if payment['payment']['status'] == 1:
             order = self.get_order(payment['payment']['order_id'])
             order = OrderSchema().dump(order)
             order['status'] = 1
             print(order)
             self.update_order(order)
+            self.event_dispatcher('order_success',{'order': order})
 
     @event_handler('paymentService', 'refund')
-    def handle_payment(self, payment):
+    def handle_refund(self, payment):
         if payment['payment']['status'] == 2:
             order = self.get_order(payment['payment']['order_id'])
             order = OrderSchema().dump(order)
             order['status'] = 2
             print(order)
             self.update_order(order)
+            self.event_dispatcher('order_cancel', {'order': order})

@@ -2,8 +2,8 @@ FROM python:3.6
 
 COPY . /service
 
-#RUN apt-get update -y && \
-#    apt-get install python3-pip -y
+RUN apt-get update -y && \
+    apt-get install python3-pip -y
 
 RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple  nameko==2.12.0
 RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple  pymysql==0.9.3

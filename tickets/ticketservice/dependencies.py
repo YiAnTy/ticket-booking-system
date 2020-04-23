@@ -30,7 +30,7 @@ class StorageWrapper:
         return {
             'ticket_id': document[b'ticket_id'].decode('utf-8'),
             'title': document[b'title'].decode('utf-8'),
-            'placed': document[b'placed'].decode('utf-8'),
+            'status': document[b'status'].decode('utf-8'),
         }
 
     def get(self, ticket_id):
@@ -56,19 +56,15 @@ class StorageWrapper:
         return self.client.hincrby(
             self._format_key(product_id), 'in_stock', -amount)
 
-    def change_status(self, ticket_id):
+    def change_status(self, ticket_id, status):
         product = self.client.hgetall(ticket_id)
-        ticket_status = product['placed']
-        if not 'false':
-            self.client.hmset(ticket_id, {'placed': "true"})
-            return "true"
-        else:
-            return "false"
+        self.client.hmset(ticket_id, {'status': status})
+
 
 class Storage(DependencyProvider):
 
     def setup(self):
-         self.client = redis.StrictRedis.from_url('redis://user:test123@localhost:6379/1')
+         self.client = redis.StrictRedis.from_url('redis://user:test123@localhost:6379/10')
         # self.client = redis.StrictRedis.from_url('redis://@localhost:6379/11')
         #self.client = redis.StrictRedis(host='127.0.0.1', port=6379, db=0, password='')
 
