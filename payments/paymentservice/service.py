@@ -1,5 +1,6 @@
 from nameko.rpc import rpc
 from nameko.events import EventDispatcher
+from paymentservice.exceptions import NotFound
 from paymentservice import schemas
 from paymentservice.models import Session, Payment
 
@@ -21,18 +22,21 @@ class PaymentService:
         payment = Payment(order_id=order['id'],total_price=total_price,status=status)
         self.db.add(payment)
         self.db.commit()
-        payment = schemas.PaymentSchema().dump(payment)
 
+        payment = schemas.PaymentSchema().dump(payment)
+        print(payment)
         self.event_dispatcher('payment', {'payment': payment})
         return payment
 
     @rpc
     def refund(self, order_id):
-        payment = self.db.query(Payment).filter(Payment.order_id == order_id).first()
-        print(payment)
-        payment.status = 2
-        self.db.commit()
+        trans = self.db.begin(subtransactions=True)
 
+        payment = self.db.query(Payment).filter(Payment.order_id == order_id).first()
+        if not payment:
+            raise NotFound('Payment with order_id {} not found'.format(order_id))
+        payment.status = 2
+        trans.commit()
         payment = schemas.PaymentSchema().dump(payment)
 
         self.event_dispatcher('refund', {'payment': payment})

@@ -1,11 +1,8 @@
 #!/bin/bash
 
+#docker build -t nameko/nameko-userservice:1.0.0 .
+#docker run --name=user-service --network=host nameko/nameko-userservice:1.0.0
 # Check if rabbit is up and running before starting the service.
-
-until nc -z ${RABBIT_HOST} ${RABBIT_PORT}; do
-    echo "$(date) - waiting for rabbitmq..."
-    sleep 2
-done
 
 # Run Service
 

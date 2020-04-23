@@ -1,4 +1,5 @@
 #!/bin/bash
+#docker build -t nameko/nameko-orderservice:1.0.0 .
 #docker run --name=order-service --network=host nameko/nameko-orderservice:1.0.0
 # Run Service
 

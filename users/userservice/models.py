@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 engine = create_engine(
-        "mysql+pymysql://root:xiang1018@localhost:3306/users?charset=utf8",
+        "mysql+pymysql://fring:12345@192.168.1.4:3306/users?charset=utf8",
         max_overflow=0,  # 超过连接池大小外最多创建的连接
         pool_size=5,  # 连接池大小
         pool_timeout=30,  # 池中没有线程最多等待的时间，否则报错
