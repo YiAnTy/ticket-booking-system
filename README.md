@@ -1,3 +1,7 @@
+---
+typora-root-url: ./docker container.png
+---
+
 # ticket-booking-system
 This system consist of 3 Microservice: UserService, PaymentService, OrderService
 
@@ -100,4 +104,4 @@ run docker container service
 docker run --name=user-service --network=host nameko/nameko-userservice:1.0.0
 ```
 
-![](/Users/fring/Desktop/docker container.png)
+![](/../docker container.png)
