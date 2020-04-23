@@ -99,7 +99,7 @@ def _get_order(order_id):
         order = rpc.orderService.get_order(order_id)
 
         # Retrieve all products from the products service
-        ticket_map = {prod['id']: prod for prod in rpc.ticketService.list()}
+        ticket_map = {prod['ticket_id']: prod for prod in rpc.ticketService.list()}
 
 
     # Enhance order details with product and image details.
@@ -158,7 +158,7 @@ def create_order():
 def _create_order(order_data):
     # check order product ids are valid
     with ClusterRpcProxy(CONFIG) as rpc:
-        valid_ticket_ids = {prod['id'] for prod in rpc.ticketService.list()}
+        valid_ticket_ids = {prod['ticket_id'] for prod in rpc.ticketService.list()}
         for item in order_data['order_details']:
             if item['ticket_id'] not in valid_ticket_ids:
                 raise TicketNotFound(

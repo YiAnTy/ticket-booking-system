@@ -68,9 +68,9 @@ class StorageWrapper:
 class Storage(DependencyProvider):
 
     def setup(self):
-        # self.client = redis.StrictRedis.from_url('redis://user:test123@localhost:6379/11')
+         self.client = redis.StrictRedis.from_url('redis://user:test123@localhost:6379/1')
         # self.client = redis.StrictRedis.from_url('redis://@localhost:6379/11')
-        self.client = redis.StrictRedis(host='127.0.0.1', port=6379, db=0, password='')
+        #self.client = redis.StrictRedis(host='127.0.0.1', port=6379, db=0, password='')
 
     def get_dependency(self, worker_ctx):
         return StorageWrapper(self.client)

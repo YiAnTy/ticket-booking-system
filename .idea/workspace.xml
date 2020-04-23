@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ee4ea1b-0640-44fc-bba0-63fa297a483a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gateway/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tickets/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ticket-booking-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ticket-booking-system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/gateway/entrypoints.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/orders/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/orderservice/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/orderservice/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/orders/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payments/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/payments/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payments/paymentservice/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/payments/paymentservice/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payments/paymentservice/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/payments/paymentservice/service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payments/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/payments/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/users/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/userservice/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/userservice/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/gateway/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/gateway/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/ticketservice/dependencies.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/ticketservice/dependencies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/ticketservice/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/ticketservice/service.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +202,9 @@
       <workItem from="1587279662994" duration="16239000" />
       <workItem from="1587392447063" duration="9756000" />
       <workItem from="1587457647596" duration="18162000" />
-      <workItem from="1587537396842" duration="16059000" />
+      <workItem from="1587537396842" duration="16990000" />
+      <workItem from="1587615935694" duration="87000" />
+      <workItem from="1587616028176" duration="546000" />
     </task>
     <task id="LOCAL-00001" summary="Create MicroService API, Waiting for database design">
       <created>1587367125236</created>
@@ -301,7 +294,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ticket_booking_system$service.coverage" NAME="service Coverage Results" MODIFIED="1587573955796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gateway/gateway" />
+    <SUITE FILE_PATH="coverage/ticket_booking_system$service.coverage" NAME="service Coverage Results" MODIFIED="1587616317590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gateway/gateway" />
     <SUITE FILE_PATH="coverage/ticket_booking_system$models__2_.coverage" NAME="models (2) Coverage Results" MODIFIED="1587538430438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/payments/paymentservice" />
     <SUITE FILE_PATH="coverage/ticket_booking_system$exceptions.coverage" NAME="exceptions Coverage Results" MODIFIED="1587567462064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gateway/gateway" />
     <SUITE FILE_PATH="coverage/ticket_booking_system$api.coverage" NAME="api Coverage Results" MODIFIED="1587395216356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
