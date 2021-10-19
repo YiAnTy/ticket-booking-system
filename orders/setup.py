@@ -7,7 +7,7 @@ setup(
     description='Store and serve orders',
     packages=find_packages(exclude=['test', 'test.*']),
     install_requires=[
-        'nameko==2.12.0',
+        'nameko==2.14.0',
         'pymysql==0.9.3',
         'marshmallow==3.5.1',
         'redis==3.4.1',
